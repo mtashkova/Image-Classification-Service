@@ -1,0 +1,83 @@
+img {
+  float: left;
+  width: 100%;
+  border-radius:15px;
+}
+
+.img-cont {
+  float:left;
+  padding-left:5px;
+}
+
+.tag-div {
+  float:right;
+  padding-right:5px;
+}
+.tag {
+  margin: 5px;
+  border:none;
+  border-radius:5px;
+}
+
+.container {
+  height:40px;
+  max-width:980px;
+  padding-top:5px;
+}
+
+.btn-primary {
+  color: black;
+  background-color: #efedf2;
+  margin-right: 20px;
+  margin-right: 10px;
+  margin: 3px;
+  border:none;
+  border-radius:5px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #5161ce;
+  border-color: #285e8e; /*set the color you want here*/
+}
+
+.hovertext {
+  position: relative;
+  border-bottom: 1px black;
+}
+
+.btn:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.btn:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.date{
+  margin-top: 20px;
+}
+
+.container {
+  display: inline;
+}
+
+body {
+  height: 93.5vh;
+  padding: 0;
+}

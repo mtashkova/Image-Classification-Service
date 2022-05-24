@@ -1,0 +1,31 @@
+<router-outlet></router-outlet>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <div class="jumbotron" style="margin-top: 200px">
+  <form #addForm="ngForm" (ngSubmit) = "onSubmit(image.url)" >
+    <div class="form-group">
+      <label>Insert Url: </label>
+      <input type="text" class="form-control" id="url"
+             [(ngModel)]="image.url"  name = "url">
+      </div>
+      <div class="ping text-center">
+      <h5 type="text" class="form-label text-center text-black-50">
+        {{pingURL(image.url)}}</h5>
+      </div>
+    <div *ngIf="error===true" class="ping text-center">
+      <h5>Not a valid URL!</h5>
+    </div>
+    <button class = "btn btn-primary form-control" type="submit" (click)="analyse()">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm" style="margin-right: 10px"></span>Analyse
+    </button>
+  </form>
+    </div>
+  </div>
+</div>
+</body>
+<!--[disabled]="addForm.invalid"-->

@@ -1,0 +1,37 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form class="me-lg-auto" style="margin-top: 30px" #addForm="ngForm" (ngSubmit) = "onSubmit(tag)" >
+  <!--<div class="form-group">-->
+  <mat-form-field style="width: 300px; margin: 50px auto; display: block;">
+    <div class="row">
+      <div class="col-md-7 mat-option-text" style="margin: auto">
+  <input  [(ngModel)]="tag" (ngModelChange)="notify($event)" style="font-size:20px"  matInput [formControl]="formControl" [matAutocomplete]="auto" this.tag="" class="inputSearch" type="text" name="search" placeholder="search">
+      </div>
+      <div class="col-lg-1" style="margin: auto">
+        <span class="glyphicon glyphicon-search"  style="font-size:26px" (click)="getImagesByTag(tag)"></span>
+      </div>
+    </div>
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-option *ngFor="let item of autoFilter | async" [value]="item">
+      {{item}}
+    </mat-option>
+  </mat-autocomplete>
+
+  </mat-form-field>
+  <!-- </div>-->
+</form>
+<div class="container">
+<div class="row" style="margin: auto">
+  <div class="col-md-4" *ngFor="let image of images">
+    <!--<div class="container">-->
+      <img class="bg-image hover-overlay ripple shadow-1-strong rounded" src={{image.url}} (click)="navigateToAddImage(image.id)"/>
+    <!--</div>-->
+  </div>
+</div>
+</div>
+</body>
+<router-outlet></router-outlet>

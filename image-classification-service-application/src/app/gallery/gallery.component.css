@@ -1,0 +1,38 @@
+img {
+  width: 100%;
+  object-fit: cover;
+  /*height: 400px;*/
+  margin-top: 20px;
+  border-radius: 25px;
+}
+
+img:hover{
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.container {
+  display: inline;
+}
+
+/*.mat-active {
+  color: #5161ce;
+}
+*/
+
+.mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: red;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: blue;
+}
+
+.mat-form-field-appearance-outline {
+  color: white;
+}

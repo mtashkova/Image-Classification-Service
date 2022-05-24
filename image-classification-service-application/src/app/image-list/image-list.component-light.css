@@ -1,0 +1,20 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #5161ce!important;
+  border: #5161ce!important;
+  margin-top: 5px;
+}
+
+.form-group{
+  /*display:block;
+  width:50%;
+  margin:0 auto;*/
+}
+
+body {
+  height: 91.5vh;
+  padding: 0;
+}
+
+.text-centre {
+  text-align: center;
+}

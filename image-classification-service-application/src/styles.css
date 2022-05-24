@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@media screen and (prefers-color-scheme: dark) {
+  @import '@angular/material/prebuilt-themes/purple-green.css';
+
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-height:100%;
+}
+/*dark mode*/
+.dark label {
+  color: #282828;
+}
+
+.dark body {
+  background-color: #282828;
+  color:  whitesmoke;
+}
+
+.dark html {
+  background-color: #282828;
+  color:  whitesmoke;
+}
+
+.darkmode label {
+  color: #282828;
+}
+
+.form-check {
+  background-color: #5161ce;
+  cursor: pointer;
+}
+
+.form-check-label {
+  background-color: #5161ce;
+  height: 32px;
+  width: 75px;
+}
+
+#checkbox{
+  cursor: pointer;
+}
+

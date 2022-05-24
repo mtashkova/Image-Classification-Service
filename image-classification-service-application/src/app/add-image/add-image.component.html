@@ -1,0 +1,24 @@
+
+<!--<p>{{ image.uploadedTime}}</p>
+<p>{{ image.analysedTime}}</p>
+<p>{{ image.service }}</p>-->
+<!--<div class="container">
+  <div class="img-cont">-->
+<head></head>
+<body>
+<div class="container">
+<div class="row" style="margin: auto">
+  <div class="col-md-7" style="margin-top: 20px">
+    <img class="images" src={{image?.url}}/>
+    </div>
+    <div class="col-md-5" style="margin: auto" style="margin-top: 30px">
+    <span  *ngFor="let description of image?.descriptions ">
+      <button class="btn btn-primary hovertext" [attr.data-hover]="description?.confidence" (click)="navigateToGalleryByTag(description.tag)">{{description?.tag}}
+      </button>
+    </span>
+      <p class="date text-muted">Analysed on: {{ image?.analysedTime}}</p>
+    </div>
+</div>
+</div>
+</body>
+<router-outlet></router-outlet>

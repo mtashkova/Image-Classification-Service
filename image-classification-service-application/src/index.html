@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <title>ImageClassificationServiceApplication</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="float-end form-check form-switch" style="margin: auto">
+  <label class="form-check-label" for="cb" style="margin-top: 25px">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="50"
+      height="25"
+      fill="currentColor"
+      class="bi bi-brightness-high"
+      viewBox="0 0 16 16">
+      <path
+        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+      />
+    </svg>
+  </label>
+  <input  style="margin-top: 30px" class="form-check-input" type="checkbox" id="cb" onclick="myFunction()"/>
+  </div>
+<app-root>
+</app-root>
+<!--script dark mode --->
+<script>
+  window.onload = init;
+
+  function myFunction() {
+    if(document.getElementById("cb").checked) {
+      window.localStorage.setItem('theme', 'dark');
+      if (window.localStorage.getItem('theme') == 'dark') {
+        console.log("maria " + window.matchMedia('(prefers-color-scheme: dark)').media)
+        document.body.classList.add('dark');
+      href='@angular/material/prebuilt-themes/purple-green.css';
+        // Get HTML head element
+        var head = document.getElementsByTagName('HEAD')[0];
+
+        // Create new link Element
+        var link = document.createElement('link');
+
+        // set the attributes for link element
+        link.rel = 'stylesheet';
+
+        link.type = 'text/css';
+
+        link.href = '@angular/material/prebuilt-themes/purple-green.css';
+
+        // Append link element to HTML head
+        head.appendChild(link);
+      }
+    } else {
+      window.localStorage.setItem('theme', 'light');
+      if (window.localStorage.getItem('theme') == 'light') {
+        document.body.classList.remove('dark');
+      }
+    }
+  }
+  function init() {
+    // the code to be called when the dom has loaded
+    // #document has its nodes
+    window.localStorage.setItem('theme', 'light');
+  }
+
+</script>
+</body>
+</html>
+
+<!--<app-add-image></app-add-image>-->
+<!--<div *ngFor="let image of images"><tr *ngFor="let description of image.descriptions " >
+  {{description.tag}}</tr>
+</div>-->
+<!--<app-root *ngFor="let image of images"
+          [image]="image"
+></app-root>-->
