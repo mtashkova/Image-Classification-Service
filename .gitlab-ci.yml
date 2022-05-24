@@ -32,8 +32,5 @@ unit-test-job:
   image: maven:3.8-openjdk-15
   script:
     - echo "Unit test"
-    - mvn test
-  artifacts:
-    paths:
-      - image-classification-service/pom.xml
+    - mvn test -f image-classification-service/pom.xml
 
