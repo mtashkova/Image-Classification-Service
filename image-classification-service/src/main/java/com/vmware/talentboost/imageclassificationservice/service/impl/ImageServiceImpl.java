@@ -31,26 +31,6 @@ public class ImageServiceImpl implements ImageService {
     }
 
     public Description addDescriptions(Image image, Description description) {
-        /*Description newDescription = descriptionService.findDescriptionByTagAndConfidence(description.getTag(), description.getConfidence());
-        if(newDescription!=null) {
-            //if no such relationship then
-            boolean repeatedIds = false;
-            List<Integer> imageIds = imageRepository.findIfImageIdAndDescriptionIdExists(newDescription.getId());
-            if(imageIds.isEmpty()) {
-                repeatedIds = true;
-            }
-            System.out.println("imageid"+ imageIds);
-            for(Integer imageId : imageIds) {
-                if(imageId == image.getId()) {
-                    repeatedIds = true;
-                }
-            }
-            if(repeatedIds == false) {
-                System.out.println("----" + image.getId() + " " + newDescription.getId());
-                imageRepository.insertExistingDescriptionId(image.getId(), newDescription.getId());
-            }
-            return description;
-        }*/
         return descriptionService.addDescription(description);
     }
     public void deleteImage(Integer id) {

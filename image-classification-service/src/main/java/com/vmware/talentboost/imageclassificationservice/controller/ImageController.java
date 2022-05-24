@@ -104,12 +104,7 @@ public class ImageController {
                             images.add(image);
                     }
                 }
-                //System.out.println("maris " + list);
             }
-        }
-        System.out.println("maris " + images.size());
-        for(Image i : images) {
-            System.out.println(i);
         }
         return new ResponseEntity<>(images, HttpStatus.OK);
     }
@@ -133,7 +128,6 @@ public class ImageController {
                                                  @RequestParam(name="numimages") int numberOfImages) {
         if(order==null) order = "bydefault";
         Page<Image> page = imageService.findAllPages(pageNumber, numberOfImages, order);
-        System.out.println("maria1 " + page.toString());
         return new ResponseEntity<>(page, HttpStatus.OK);
     }
 

@@ -18,10 +18,9 @@ public interface DescriptionRepository extends JpaRepository<Description, Intege
     Description findDescriptionByConfidence(Double number);
 
     @Query(value = "SELECT image_id FROM description_image WHERE description_id =:descriptionId",nativeQuery = true)
-    public List<Integer>findAllImagesIdFromDescriptionId(int descriptionId);
+    List<Integer>findAllImagesIdFromDescriptionId(int descriptionId);
 
     @Query(value = "SELECT * FROM descriptions WHERE tag LIKE :tag% ",nativeQuery = true)
-    public List<Description>findAllByTagStartsWithm(String tag);
-    public List<Description>findAllByTagStartsWith(String tag);
+    List<Description>findAllByTagStartsWithLetter(String tag);
 
 }

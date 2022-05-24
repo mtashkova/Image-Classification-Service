@@ -5,8 +5,12 @@ import com.vmware.talentboost.imageclassificationservice.data.Description;
 import java.util.List;
 
 public interface DescriptionService {
-    public Description addDescription(Description description);
-    public List<Description> findAllDescription();
-    public List<Description> findAllDescriptions();
-    public void deleteAllDescriptions();
+    Description addDescription(Description description);
+    List<Description> findAllDescriptions();
+    void deleteAllDescriptions();
+
+    List<Description> findDescriptionByTags(String str);
+    List<Description>findAllByTagStartsWith(String tag);
+
+    List<Integer> findAllImagesIdFromDescriptionId(int descriptionId);
 }

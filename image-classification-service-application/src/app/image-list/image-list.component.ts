@@ -17,7 +17,6 @@ export class ImageListComponent implements OnInit {
   constructor (private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log("MARia");
   }
 
   public analyse() {
@@ -30,7 +29,6 @@ export class ImageListComponent implements OnInit {
     let newUrl = "https://cors-anywhere.herokuapp.com/" + url;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", newUrl, false ); // false for synchronous request
-    console.log("maria10")
     xmlHttp.send( null );
     if(xmlHttp.status != 200) {
       return "Not a valid image URL!".toString();
@@ -63,7 +61,6 @@ export class ImageListComponent implements OnInit {
       this.imageService.addImage(url).subscribe(
         (response: Image) => {
           this.image = response;
-          console.log("MARA" + this.image.service);
           this.router.navigate(['/add-image'], {queryParams: {data: this.image.id}});
         },
         (error: HttpErrorResponse) => {

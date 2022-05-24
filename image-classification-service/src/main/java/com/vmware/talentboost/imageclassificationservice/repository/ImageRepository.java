@@ -27,10 +27,6 @@ public interface ImageRepository extends JpaRepository<Image, Integer>, PagingAn
     @Query(value = "SELECT image_id FROM description_image WHERE description_id =:descriptionId",nativeQuery = true)
     List<Integer> findIfImageIdAndDescriptionIdExists(int descriptionId);
 
-    //List<Image> findAllByOrderByUploadedTimeDesc();
-
-    //List<Image> findAllByOrderByUploadedTimeAsc();
-
     @Override
     Page<Image> findAll(org.springframework.data.domain.Pageable pageable);
 

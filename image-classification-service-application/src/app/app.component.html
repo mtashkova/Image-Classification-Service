@@ -1,47 +1,17 @@
 <html>
 <body>
 <nav class="navbar  navbar-expand-custom navbar-mainbg">
-  <a class="navbar-brand navbar-logo" routerLink=""  routerLinkActive="active">Image Analyser</a>
+  <a class="navbar-brand navbar-logo" routerLink=""  routerLinkActive="active">Image Analyzer</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <!--<div class="collapse navbar-collapse" id="mynavbar">-->
+    <div class="collapse navbar-collapse" id="mynavbar">
     <ul class = "navbar-nav">
       <li class="nav-item">
         <a class="nav-link" routerLink="gallery" routerLinkActive="active" (click)="reloadCurrentPage()">Gallery</a>
       </li>
     </ul>
   </div>
-  <!--<div *ngIf="router.url === '/gallery'"  class="search">
-    <button style="margin-right: 100px" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span style="margin-right: 100px" class="navbar-toggler-icon"></span>
-    </button>
-  </div>-->
-    <!--</div>-->
-
+  </div>
 </nav>
 </body>
 </html>
-
-<!--<app-add-image></app-add-image>-->
-<!--<div *ngFor="let image of images"><tr *ngFor="let description of image.descriptions " >
-  {{description.tag}}</tr>
-</div>-->
-<!--<app-root *ngFor="let image of images"
-          [image]="image"
-></app-root>-->
 <router-outlet></router-outlet>
-<!--<div class="col-md-6 offset-md-3">
-<form #addForm="ngForm" (ngSubmit) = "onSubmit(image.url)">
-  <div class="form-group">
-    <label>Insert Url: </label>
-    <input type="text" class="form-control" id="url"
-           [(ngModel)]="image.url"  name = "url">
-  </div>
-  <button routerLink="add-image"  routerLinkActive="active" [disabled]="addForm.invalid" class = "btn btn-primary" type="submit">Analyse</button>
-  <app-add-image></app-add-image>
-</form>
-</div>-->
-<!--<footer class="footer">
-  <div class = "container">
-    <span>All Rights Reserved 2022</span>
-  </div>
-</footer>-->

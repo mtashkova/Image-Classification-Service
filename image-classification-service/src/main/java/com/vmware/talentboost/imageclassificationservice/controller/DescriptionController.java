@@ -49,12 +49,10 @@ public class DescriptionController {
 
     @RequestMapping(value ="tags", method = GET)
     public ResponseEntity<List<Description>> getAutocomplete(@RequestParam(name="autocomplete") String tag) {
-        System.out.println("marcheto " + tag);
        // String str = "" + tag;
         if(tag.isEmpty())  System.out.println("empty" + tag);
         descriptionService.findAllDescriptions();
         List<Description> list = descriptionService.findAllByTagStartsWith(tag);
-        System.out.println("marcheto " + list);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 

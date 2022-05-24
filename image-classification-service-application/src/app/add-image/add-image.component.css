@@ -51,7 +51,7 @@ img {
   visibility: hidden;
   opacity: 0;
   width: 140px;
-  background-color: black;
+  background-color: #282828;
   color: #fff;
   text-align: center;
   border-radius: 5px;
@@ -62,6 +62,10 @@ img {
   z-index: 1;
   left: 0;
   top: 110%;
+}
+
+::ng-deep .dark .btn:before {
+  background-color: grey;
 }
 
 .btn:hover:before {
@@ -78,6 +82,7 @@ img {
 }
 
 body {
-  height: 93.5vh;
+  height: 91.5vh;
   padding: 0;
 }
+

@@ -23,10 +23,6 @@ public class DescriptionServiceImpl implements DescriptionService {
     }
 
     public Description addDescription(Description description) {
-        /*Description newDescription = this.findDescriptionByTagAndConfidence(description.getTag(), description.getConfidence());
-        if(newDescription!=null) {
-            return description;
-        }*/
         return descriptionRepository.save(description);
     }
 
@@ -43,29 +39,12 @@ public class DescriptionServiceImpl implements DescriptionService {
     }
 
 
-    Description findDescriptionByTagAndConfidence(String tag, double confidence) {
-        return descriptionRepository.findDescriptionByTagAndConfidence(tag, confidence);
-    }
-    public Description findDescriptionByConfidence(Double confidence) {
-        return descriptionRepository.findDescriptionByConfidence(confidence);
-    }
-
     public List<Description> findDescriptionByTags (String str){
         return descriptionRepository.findDescriptionByTag(str);
     }
-    /*public Description findTags(String tags) {
-        Description desc;
-        List<Description> descriptions = new ArrayList<>();
-        desc = this.findDescriptionByTag(tags);
-        System.out.println(tags + " desc " + desc);
-        //descriptions.add(desc);
-        return desc;
-    }*/
 
     public List<Description>findAllByTagStartsWith(String tag) {
-        System.out.printf("nooco " + tag);
-        //this.descriptionRepository.findAll();
-        return descriptionRepository.findAllByTagStartsWithm(tag);
+        return descriptionRepository.findAllByTagStartsWithLetter(tag);
     }
 
     public List<Integer> findAllImagesIdFromDescriptionId(int descriptionId){

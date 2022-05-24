@@ -15,8 +15,6 @@ import java.util.List;
 public class Image implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    /*@GenericGenerator(name="custom_emp", strategy = "com.vmware.talentboost.imageclassificationservice.data.CustomGenerator")
-    @GeneratedValue(generator = "custom_emp")*/
     @Column(name = "id", nullable = false, updatable = false)
     private int id;
 

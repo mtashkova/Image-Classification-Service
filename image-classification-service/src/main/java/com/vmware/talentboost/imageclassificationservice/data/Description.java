@@ -18,8 +18,6 @@ public class Description implements Serializable {
     @Column(name = "tag")
     private String tag;
 
-    /*@ManyToMany(mappedBy = "descriptions")
-    private List<Image> images;*/
 
     public Description(double confidence, String tag) {
         this.confidence = confidence;

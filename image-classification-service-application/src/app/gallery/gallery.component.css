@@ -20,19 +20,15 @@ img:hover{
   display: inline;
 }
 
-/*.mat-active {
-  color: #5161ce;
+::ng-deep .dark  .mat-form-field-underline {
+  background: whitesmoke !important;
+  height: 3px !important;
 }
-*/
-
-.mat-form-field.mat-focused .mat-form-field-ripple{
-  background-color: red;
-}
-
-.mat-form-field-appearance-legacy .mat-form-field-underline {
-  background-color: blue;
+::ng-deep .dark .mat-form-field.mat-focused .mat-form-field-label {
+  color:whitesmoke !important;
 }
 
-.mat-form-field-appearance-outline {
-  color: white;
+::ng-deep .dark .mat-form-field-label {
+  color:whitesmoke !important;
 }
+
