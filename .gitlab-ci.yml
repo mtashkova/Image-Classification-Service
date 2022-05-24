@@ -8,6 +8,7 @@ cache:
 stages:
   - checkout
   - build
+  - test
 
 job:
   stage: checkout
@@ -20,8 +21,22 @@ build-job:
   image: maven:3.8-openjdk-15
   script:
     - cd image-classification-service
-    - echo "build"
+    - echo "Build phase"
     - mvn package -DskipTests
   artifacts:
     paths:
       - image-classification-service/target/image-classification-service-$MAVEN_VERSION.jar
+
+unit-test-job:
+  stage: test
+  image: maven:3.8-openjdk-15
+  script:
+    - echo "Unit test"
+    - mvn test
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - "target/surefire-reports/TEST-*.xml"
+        - "target/failsafe-reports/TEST-*.xml"
+
