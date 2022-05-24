@@ -33,10 +33,4 @@ unit-test-job:
   script:
     - echo "Unit test"
     - mvn test
-  artifacts:
-    when: always
-    reports:
-      junit:
-        - "target/surefire-reports/TEST-*.xml"
-        - "target/failsafe-reports/TEST-*.xml"
 
