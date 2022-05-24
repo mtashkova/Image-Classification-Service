@@ -35,5 +35,5 @@ unit-test-job:
     - mvn test
   artifacts:
     paths:
-      - image-classification-service
+      - image-classification-service/
 
