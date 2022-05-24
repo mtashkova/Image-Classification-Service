@@ -33,4 +33,7 @@ unit-test-job:
   script:
     - echo "Unit test"
     - mvn test
+  artifacts:
+    paths:
+      - image-classification-service
 
