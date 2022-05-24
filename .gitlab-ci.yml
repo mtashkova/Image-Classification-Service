@@ -1,0 +1,27 @@
+variables:
+   MAVEN_VERSION: 0.0.1-SNAPSHOT
+
+cache:
+  paths:
+    - image-classification-service/
+
+stages:
+  - checkout
+  - build
+
+job:
+  stage: checkout
+  image: maven:3.8-openjdk-15
+  script: 
+    - echo "Checkout phase"
+
+build-job:
+  stage: build
+  image: maven:3.8-openjdk-15
+  script:
+    - cd image-classification-service
+    - echo "build"
+    - mvn package -DskipTests
+  artifacts:
+    paths:
+      - image-classification-service/target/image-classification-service-$MAVEN_VERSION.jar
