@@ -10,6 +10,9 @@ stages:
   - build
   - test
 
+include:
+  - template: Code-Quality.gitlab-ci.yml
+
 job:
   stage: checkout
   image: maven:3.8-openjdk-15
@@ -33,4 +36,9 @@ unit-test-job:
   script:
     - echo "Unit test"
     - mvn test -f image-classification-service/pom.xml
+
+code_quality:
+  stage: test
+  artifacts:
+    paths: [gl-code-quality-report.json]
 
