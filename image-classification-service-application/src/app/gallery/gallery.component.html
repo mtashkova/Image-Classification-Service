@@ -23,12 +23,10 @@
 
   </mat-form-field>
 </form>
-<div class="container">
-<div class="row" style="margin: auto">
-  <div class="col-md-4" *ngFor="let image of images">
+<div class="masonry">
+  <div class="item" *ngFor="let image of images">
       <img class="bg-image hover-overlay ripple shadow-1-strong rounded" src={{image.url}} (click)="navigateToAddImage(image.id)"/>
+    </div>
   </div>
-</div>
-</div>
 </body>
 <router-outlet></router-outlet>
