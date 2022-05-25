@@ -91,21 +91,7 @@ public class ImageController {
 
     @RequestMapping(value ="images", method = GET)
     public ResponseEntity<List<Image>> getImagesByTag(@RequestParam(name="tags") String[] tags) {
-        List<Image> images = new ArrayList<>();
-        List<List<Integer>> list = new ArrayList<>();
-        for(String tag : tags) {
-            List<Description> descr = descriptionService.findDescriptionByTags(tag);
-            for (Description desc : descr) list.add(descriptionService.findAllImagesIdFromDescriptionId(desc.getId()));
-            if (list != null) {
-                for (List<Integer> l : list) {
-                    for (Integer i : l) {
-                        Image image = imageService.findImageById(i);
-                        if(!images.contains(image))
-                            images.add(image);
-                    }
-                }
-            }
-        }
+        List<Image> images = imageService.getImagesByTag(tags);
         return new ResponseEntity<>(images, HttpStatus.OK);
     }
 

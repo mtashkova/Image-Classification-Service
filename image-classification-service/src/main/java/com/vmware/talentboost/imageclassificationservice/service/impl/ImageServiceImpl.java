@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.rmi.NoSuchObjectException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -74,10 +75,27 @@ public class ImageServiceImpl implements ImageService {
         return this.findAllByPage(firstPageWithTwoElements);
     }
 
+    public List<Image> getImagesByTag(String[] tags) {
+        List<Image> images = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
+        for(String tag : tags) {
+            List<Description> descr = descriptionService.findDescriptionByTags(tag);
+            for (Description desc : descr) list.add(descriptionService.findAllImagesIdFromDescriptionId(desc.getId()));
+            if (list != null) {
+                for (List<Integer> l : list) {
+                    for (Integer i : l) {
+                        Image image = this.findImageById(i);
+                        if(!images.contains(image))
+                            images.add(image);
+                    }
+                }
+            }
+        }
+        return images;
+    }
 
     public Image addImage(String url) throws IOException {
         String imaggaUrl = "https://api.imagga.com/v2/tags?image_url=" + url;
-        System.out.println(imaggaUrl);
         Image existingImage = this.findImageByUrl(imaggaUrl);
         if(existingImage != null) {
             return existingImage;
