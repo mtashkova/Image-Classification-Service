@@ -11,15 +11,15 @@ export class ImageService {
   private apiServerUrl = environment.apiBaseUrl;
   constructor (private http: HttpClient) { }
   public getImages(): Observable<Image[]> {
-    return this.http.get<Image[]>(`${this.apiServerUrl}`);
+    return this.http.get<Image[]>(`${this.apiServerUrl}/images`);
   }
 
   public addImage(url: String): Observable<Image> {
-    return this.http.post<Image>(`${this.apiServerUrl}`, url);
+    return this.http.post<Image>(`${this.apiServerUrl}/images`, url);
   }
 
   public getImageById(imageId: number): Observable<Image> {
-    return this.http.get<Image>(`${this.apiServerUrl}/${imageId}`);
+    return this.http.get<Image>(`${this.apiServerUrl}/images/${imageId}`);
   }
 
   public deleteImages(imageId: number): Observable<void> {
@@ -27,11 +27,11 @@ export class ImageService {
   }
 
   public getImagesByTag(tag : String[]) : Observable<Image[]> {
-    return this.http.get<Image[]>(`${this.apiServerUrl}/images?tags=${tag}`);
+    return this.http.get<Image[]>(`${this.apiServerUrl}/images/images?tags=${tag}`);
   }
 
   public getPaginatedImages(page: number, imagesOnPage : number){
-    return this.http.get<any>(`${this.apiServerUrl}/pagination?numimages=${imagesOnPage}&pagenumber=${page}`);
+    return this.http.get<any>(`${this.apiServerUrl}/images/pagination?numimages=${imagesOnPage}&pagenumber=${page}`);
   }
 
   public autocomplete() : Observable<Description[]> {

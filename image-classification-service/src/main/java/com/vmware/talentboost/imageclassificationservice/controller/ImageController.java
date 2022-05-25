@@ -25,6 +25,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
 @RestController
+@RequestMapping("images")
 public class ImageController {
     private final ImageServiceImpl imageService;
     private final DescriptionServiceImpl descriptionService;
@@ -58,7 +59,7 @@ public class ImageController {
         return new ResponseEntity<>(newImage, HttpStatus.OK);
     }*/
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Image> addImage(@RequestBody String url) throws IOException {
         if (!StringUtils.hasText(url)) {
             throw new IllegalArgumentException("Image url must be specified.");
@@ -95,7 +96,7 @@ public class ImageController {
         return new ResponseEntity<>(images, HttpStatus.OK);
     }
 
-    @RequestMapping(value ="noCache", method = PUT)
+    @RequestMapping(value ="images", method = PUT)
     public ResponseEntity<List<Image>> update(@RequestParam("noCache") boolean cache) {
         if(cache == true) {
             List<Image> newImageList = new ArrayList<>();
