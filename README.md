@@ -1,7 +1,5 @@
 # The Image Classification Service (ICS)
 
-The Image Classification Service (ICS) is a web-based image classification application that allows users to submit image URLs and get the linked images classified (tagged) based on their perceived content. To achieve this, the service relies on image recognition services available online.
-
 ## Integrate with your tools
 
 - [ ] [Set up project integrations](https://gitlab-talentboost.vmware.com/mmtashkova/ics1/-/settings/integrations)
@@ -37,8 +35,8 @@ Depending on what you are making, it can be a good idea to include screenshots o
 ## Installation
 
 ### Prerequisites
-Maven
-Java 15
+ Maven
+ Java 15
 
 ## Backend
 Build and run with mvn package 
