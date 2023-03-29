@@ -30,6 +30,7 @@ ICS follows a client-server architecture with the following components:
     Database: The database that stores the analyzed image information, such as the image URL.
 
 ## Visuals
+
 Here is an image of the main page, where an url of the image has to be provided.
 ![image](https://user-images.githubusercontent.com/67580071/228500710-7a72cb8d-3f01-48d3-99ea-010dc5ea1c86.png)
 
