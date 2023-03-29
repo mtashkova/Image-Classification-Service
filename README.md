@@ -37,7 +37,8 @@ This is the gallery page:
 ![image](https://user-images.githubusercontent.com/67580071/228501429-23edd87b-5e22-4fae-85b4-35cd4e69af33.png)
 
 This is the single image page. Showing all of the image tags.
-![file](https://user-images.githubusercontent.com/67580071/228502128-6da6c07a-3186-466d-9b19-4220fdf65edb.png)
+![file](https://user-images.githubusercontent.com/67580071/228502506-8201747e-ec05-481d-b40d-34a9f624391d.png)
+
 
 
 ## Installation
