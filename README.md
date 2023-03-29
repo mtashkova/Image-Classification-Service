@@ -33,6 +33,13 @@ ICS follows a client-server architecture with the following components:
 Here is an image of the main page, where an url of the image has to be provided.
 ![image](https://user-images.githubusercontent.com/67580071/228500710-7a72cb8d-3f01-48d3-99ea-010dc5ea1c86.png)
 
+This is the gallery page:
+![image](https://user-images.githubusercontent.com/67580071/228501429-23edd87b-5e22-4fae-85b4-35cd4e69af33.png)
+
+This is the single image page. Showing all of the image tags.
+![file](https://user-images.githubusercontent.com/67580071/228502128-6da6c07a-3186-466d-9b19-4220fdf65edb.png)
+
+
 ## Installation
 
 ### Prerequisites
